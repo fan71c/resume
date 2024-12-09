@@ -43,7 +43,7 @@ export default function RootLayout({
                 <Header/>
             <BackgroundBeamsWithCollision>
                 {children}
-                <div className={" fixed bottom-6 right-6"}>
+                <div className={"fixed bottom-6 right-6 "}>
                     <ModeToggle/>
                 </div>
             </BackgroundBeamsWithCollision>
