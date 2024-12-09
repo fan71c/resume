@@ -10,18 +10,26 @@ interface Stat {
     title: string;
     count: number;
 }
+type StravaData = {
+  milesRan: number;
+};
 
 export default function Stats() {
-    const {data, error} = useSWR('/api/strava', fetcher);
+    const {data, error} = useSWR<StravaData>('/api/strava', fetcher);
     const milesRan = 1891;
+    const addToStrava = 1259;
+    const milesRanFinal = data && typeof data.milesRan === 'number'
+        ? addToStrava + data.milesRan
+        : milesRan;
+
     const stats: Stat[] = [
         {title: "Projects", count: 7},
         {title: "Technologies mastered", count: 4},
         {title: "Years of work experience", count: 2},
-        {title: "Miles ran", count: milesRan},
+        {title: "Miles ran", count: milesRanFinal},
     ];
 
-    return(
+    return (
         <section className={"mt-5"}>
             <div className={"container mx-auto"}>
                 <div className={"flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none xl:justify-start"}>
