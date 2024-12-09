@@ -1,6 +1,5 @@
 import Hero from "@/components/hero/hero";
 import {Separator} from "@/components/ui/separator";
-import Header from "@/components/header/header";
 
 export default function Home() {
     return (

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 
 export default function Portrait() {
-    return <div className={"flex items-center justify-center"}>
+    return <div className={"flex items-center justify-center  xl:pt-2 md:pt-32 sm:pt-64 pt-96"}>
         <motion.svg className={"w-[300px] xl:w-[506px] h-[300px] xl:-[506px] "}
                     fill={"transparent"}
                     viewBox={"0 0 506 506"}
