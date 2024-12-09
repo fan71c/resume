@@ -28,13 +28,14 @@ export default function Hero() {
                             animate={{opacity: 1, y: 0}}
                 >
                     <p>
-                        <span className={"font-bold"}>Hello, I'am Danylo</span> I have a background in Finance and
-                        Marketing, currently expanding my expertise through <span className={"font-bold"}>computer science studies</span>.
-                        I thrive on analyzing financial data and optimizing processes, while also enjoying
-                        building <span className={"italic"}>sites</span> as a rising full-stack developer.
+                        <span className={"font-bold"}>Hello, I’m Danylo.</span> With expertise in Finance, Marketing,
+                        and Computer Science, I excel in driving financial insights, streamlining processes, and
+                        crafting innovative solutions.
                     </p>
+
                     <div className={"flex justify-center text-justify underline"}>
-                        My focus is <FlipWords words={flipWords} className={"font-bold text-violet-700 dark:text-violet-300"}/>
+                        My focus is <FlipWords words={flipWords}
+                                               className={"font-bold text-violet-700 dark:text-violet-300"}/>
                     </div>
                 </motion.div>
             </div>
