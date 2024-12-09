@@ -1,11 +1,10 @@
 import type {Metadata} from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import {Analytics} from "@vercel/analytics/react"
 import {SpeedInsights} from "@vercel/speed-insights/next"
-import {ThemeProvider} from "@/components/theme-provider";
+import {ThemeProvider} from "@/components/context/theme-provider";
 import {ModeToggle} from "@/components/ui/mode-toggle";
-import {BackgroundBeamsWithCollision} from "@/components/background-beams-with-collision";
+import {BackgroundBeamsWithCollision} from "@/components/context/background-beams-with-collision";
 
 
 

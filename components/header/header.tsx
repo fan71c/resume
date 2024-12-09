@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 import {links} from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
-import {ActiveSectionContext} from "@/components/active-section-context";
+import {ActiveSectionContext} from "@/components/context/active-section-context";
 
 export default function Header() {
 
