@@ -1,54 +1,28 @@
-import {baseUrl} from "@/app/sitemap";
-import {formatDate, getBlogPosts} from "@/app/blog/utils";
-import {CustomMDX} from "@/components/mdx";
-import {notFound} from "next/navigation";
-import {serialize} from "next-mdx-remote/serialize";
-import {MDXRemoteSerializeResult} from "next-mdx-remote/rsc";
+"use server"
+import { baseUrl } from "@/app/sitemap";
+import { formatDate, getBlogPosts } from "@/app/blog/utils";
+import { CustomMDX } from "@/components/mdx";
+import { notFound } from "next/navigation";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemoteSerializeResult } from "next-mdx-remote/rsc";
+import { Metadata } from "next";
 
-interface Params {
-  slug: string;
-}
-
-interface Post {
-  slug: string;
-  metadata: {
-    title: string;
-    publishedAt: string;
-    summary: string;
-    image?: string;
-  };
-  content: string;
-}
-
-export function generateStaticParams() {
-  const posts = getBlogPosts()
+// Async `generateStaticParams`
+export async function generateStaticParams() {
+  const [posts] = await Promise.all([getBlogPosts()]);
 
   return posts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
-export function generateMetadata({ params }: { params: Params }) {
-  const post = getBlogPosts().find((post) => post.slug === params.slug) as Post | undefined
+// Fix the `generateMetadata` function with async params access
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params; // Await params destructuring
+  const [post] = await Promise.all([getBlogPosts().find((post) => post.slug === slug)]);
+
   if (!post) {
-    return {
-      title: "Not Found",
-      description: "Post not found",
-      openGraph: {
-        title: "Not Found",
-        description: "Post not found",
-        type: 'article',
-        publishedTime: "",
-        url: `${baseUrl}/blog/not-found`,
-        images: [],
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title: "Not Found",
-        description: "Post not found",
-        images: [],
-      },
-    }
+    notFound();
   }
 
   const {
@@ -56,10 +30,11 @@ export function generateMetadata({ params }: { params: Params }) {
     publishedAt: publishedTime,
     summary: description,
     image,
-  } = post.metadata
+  } = post.metadata;
+
   const ogImage = image
     ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
+    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -82,53 +57,55 @@ export function generateMetadata({ params }: { params: Params }) {
       description,
       images: [ogImage],
     },
-  }
+  };
 }
 
-export default async function Blog({params}: { params: Params }) {
-  const post = getBlogPosts().find((post) => post.slug === params.slug) as Post | undefined
+// Fixed Blog component with proper async destructuring from params
+export default async function Blog({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; // Properly `await` params here
+  const [post] = await Promise.all([getBlogPosts().find((post) => post.slug === slug)]);
+
   if (!post) {
-    notFound(); // Safely handle the case when post is undefined
-    return null; // Explicit return to satisfy TypeScript
+    notFound();
   }
-  const serializedContent: MDXRemoteSerializeResult = await serialize(post.content)
+
+  const serializedContent: MDXRemoteSerializeResult = await serialize(post.content);
 
   return (
-
-      <section>
-        <script
-            type="application/ld+json"
-            suppressHydrationWarning
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'BlogPosting',
-                headline: post.metadata.title,
-                datePublished: post.metadata.publishedAt,
-                dateModified: post.metadata.publishedAt,
-                description: post.metadata.summary,
-                image: post.metadata.image
-                    ? `${baseUrl}${post.metadata.image}`
-                    : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-                url: `${baseUrl}/blog/${post.slug}`,
-                author: {
-                  '@type': 'Person',
-                  name: 'My Portfolio',
-                },
-              }),
-            }}
-        />
-        <h1 className="title font-semibold text-2xl tracking-tighter">
-          {post.metadata.title}
-        </h1>
-        <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
-          </p>
-        </div>
-        <article className="prose">
-          <CustomMDX source={serializedContent}/>
-        </article>
-      </section>
-  )
+    <section>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.metadata.title,
+            datePublished: post.metadata.publishedAt,
+            dateModified: post.metadata.publishedAt,
+            description: post.metadata.summary,
+            image: post.metadata.image
+              ? `${baseUrl}${post.metadata.image}`
+              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+            url: `${baseUrl}/blog/${post.slug}`,
+            author: {
+              '@type': 'Person',
+              name: 'My Portfolio',
+            },
+          }),
+        }}
+      />
+      <h1 className="title font-semibold text-2xl tracking-tighter">
+        {post.metadata.title}
+      </h1>
+      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {formatDate(post.metadata.publishedAt)}
+        </p>
+      </div>
+      <article className="prose">
+        <CustomMDX source={serializedContent} />
+      </article>
+    </section>
+  );
 }
