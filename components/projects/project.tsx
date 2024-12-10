@@ -73,12 +73,12 @@ export default function Project({title, description, tags, imageUrl, link, date,
                         {iconLists.map((icon: string, index: number) => (
                             <div
                                 key={index}
-                                className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                                className="border border-white/[.2] rounded-full bg-black lg:w-14 lg:h-14 w-12 h-12 flex justify-center items-center"
                                 style={{
                                     transform: `translateX(-${5 * index + 2}px)`,
                                 }}
                             >
-                                <img src={icon} alt={`Icon ${index}`} className="p-2"/>
+                                <Image src={icon} alt={`Icon ${index}`} className="p-2" width={"400"} height={"400"}/>
                             </div>
                         ))}
                     </div>

@@ -4,21 +4,21 @@ import airbnblogo from "@/public/Projects/AirBnb/image.png";
 import meta from "@/public/Projects/APM/META/meta.jpeg";
 import lgih from "@/public/Projects/APM/LGIH/logo.jpeg";
 import cffn from "@/public/Projects/APM/CFFN/img.png";
-import brofi from "@/public/Projects/BroFi/img.png";
+import nba from "@/public/Projects/NBA/nba.png";
 
 export const projectsData = [
-    // {
-    //     id: 1,
-    //     title: "BroFi",
-    //     description:
-    //         "Developing BroFi, a financial management platform with real-time data and analytics to empower users with informed financial decision-making",
-    //     tags: ["Next.js", "TypeScript", "Django", "Docker", "Kubernetes"],
-    //     imageUrl: brofi,
-    //     link: "https://brofi.app/",
-    //     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/c.svg", "icons8-docker.svg", "Django.svg"],
-    //     date: "2024",
-    //     area: "Web Development",
-    // },
+    {
+        id: 1,
+        title: "NBA Player Performance Prediction",
+        description:
+            "Predicted NBA player performance using machine learning models and player statistics",
+        tags: ["Python", "Machine Learning", "Pandas", "Numpy", "Scikit-learn"],
+        imageUrl: nba,
+        link: "https://brofi.app/",
+        iconLists: ["numpy-seeklogo-2.svg", "pandas-seeklogo.svg", "scikit-learn.svg", "sql-database-generic.svg"],
+        date: "2024",
+        area: "Data Science",
+    },
     {
         id: 2,
         title: "Portfolio Management CFFN",

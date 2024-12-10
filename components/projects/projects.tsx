@@ -9,7 +9,7 @@ import SectionHeading from "@/components/ui/section-heading";
 
 const Projects = () => {
     const [selectedFilter, setSelectedFilter] = useState('All');
-    const filters = ['All', 'Web Development', 'Finance', 'Marketing'];
+    const filters = ['All', 'Data Science', 'Finance', 'Marketing'];
 
     const handleFilterChange = (filter: React.SetStateAction<string>) => {
         setSelectedFilter(filter);
@@ -23,7 +23,7 @@ const Projects = () => {
     const ref = useSectionInView("Projects");
 
     return (
-        <section id={"finance"} className={"scroll-mt-28 min-w-fit"} ref={ref}>
+        <section id={"finance"} className={"scroll-mt-28 min-w-fit mx-2"} ref={ref}>
             <SectionHeading>
                 My Projects
             </SectionHeading>
@@ -43,7 +43,7 @@ const Projects = () => {
                     </Button>
                 ))}
             </div>
-            <div className="flex flex-col md:flex-row md:flex-wrap justify-center sm:gap-x-[10rem] gap-y-[10rem] sm:gap-y-[14rem] my-[10rem]">
+            <div className="flex flex-col md:flex-row md:flex-wrap justify-center sm:gap-x-[5rem] gap-y-[6rem] sm:gap-y-[8rem] my-[8rem]">
                 {
                     filteredProjects.map((project) => (
                         <React.Fragment key={project.id}>
