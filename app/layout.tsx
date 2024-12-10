@@ -32,6 +32,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning={true} className="scroll-smooth light">
         <body
             className={`${roboto.className} antialiased`}
+
         >
         <ThemeProvider
             attribute="class"
@@ -40,7 +41,7 @@ export default function RootLayout({
             disableTransitionOnChange
         >
 
-                <Header/>
+            <Header/>
             <BackgroundBeamsWithCollision>
                 {children}
                 <div className={"fixed bottom-6 right-6 "}>

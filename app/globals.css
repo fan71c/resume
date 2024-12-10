@@ -69,11 +69,21 @@
 }
 
 
-html, body {
+html,
+body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   scroll-behavior: smooth;
+  overflow-y: auto;
+  height: 100%;
+  min-height: 100vh;
 }
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 
 
 ::selection {
