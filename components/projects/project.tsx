@@ -25,7 +25,7 @@ export default function Project({title, description, tags, imageUrl, link, date,
                 opacity: opacityProgess,
                 position: "relative",
             }}
-            className="group mb-3 sm:mb-8 last:mb-0 "
+            className="group mb-3 sm:mb-8 last:mb-0"
         >
             <PinContainer
                 title={title}

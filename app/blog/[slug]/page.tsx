@@ -69,10 +69,10 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     notFound();
   }
 
-  const serializedContent: MDXRemoteSerializeResult = await serialize(post.content);
+  // const serializedContent: MDXRemoteSerializeResult = await serialize(post.content);
 
   return (
-    <section>
+    <section className={"min-h-[1000rem] mx-auto max-w-screen-md "}>
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -103,8 +103,8 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose">
-        <CustomMDX source={serializedContent} />
+      <article className="prose ">
+        <CustomMDX source={post.content} />
       </article>
     </section>
   );
