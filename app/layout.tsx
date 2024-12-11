@@ -41,10 +41,12 @@ export default function RootLayout({
             disableTransitionOnChange
         >
             <Header/>
+            <BackgroundBeamsWithCollision>
                 {children}
                 <div className={"fixed bottom-6 right-6 "}>
                     <ModeToggle/>
                 </div>
+            </BackgroundBeamsWithCollision>
         </ThemeProvider>
         <Analytics/>
         <SpeedInsights/>
