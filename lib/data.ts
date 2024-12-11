@@ -1,18 +1,11 @@
-//
-//
 import React from "react";
-import {FaBriefcase, FaChartLine, FaChartPie, FaGraduationCap, FaMoneyCheckAlt} from "react-icons/fa";
-
+import { FaBriefcase, FaChartLine, FaChartPie, FaGraduationCap, FaMoneyCheckAlt } from "react-icons/fa";
 
 export const links = [
     {
         name: "Home",
         hash: "#home",
     },
-    // {
-    //     name: "About",
-    //     hash: "#about",
-    // },
     {
         name: "Projects",
         hash: "#finance",
@@ -35,6 +28,40 @@ export const links = [
     },
 ] as const;
 
+export const schoolData = [
+    {
+        title: "Master's degree, Computer and Information Technology",
+        location: "University of Pennsylvania, USA",
+        description:
+            "Currently pursuing a Master's degree with a focus on Computer and Information Technology",
+        icon: React.createElement(FaGraduationCap),
+        date: "Jul 2023 - Aug 2025",
+    },
+    {
+        title: "Study Abroad - Finance",
+        location: "The London School of Economics and Political Science (LSE), UK",
+        description: "Completed a Finance study abroad program specializing in Alternative Investments",
+        icon: React.createElement(FaGraduationCap),
+        date: "Jun 2022 - Jul 2022",
+    },
+    {
+        title: "Study Abroad - Marketing",
+        location: "CIMBA, Paderno del Grappa, Italy",
+        description:
+            "Studied International Marketing and The Global Consumer, focused on Global Business Education in Italy",
+        icon: React.createElement(FaGraduationCap),
+        date: "May 2022 - Jun 2022",
+    },
+    {
+        title: "Double Bachelor's degree, Finance & Marketing",
+        location: "The University of Kansas School of Business, USA",
+        description:
+            "Graduated with a double major in Finance and Marketing, consistently achieving Honor Roll status with a GPA of 3.9 or higher throughout all semesters",
+        icon: React.createElement(FaGraduationCap),
+        date: "Aug 2020 - May 2023",
+    }
+] as const;
+
 export const experiencesData = [
     {
         title: "Junior Accountant - Capital Market Service",
@@ -43,14 +70,6 @@ export const experiencesData = [
         icon: React.createElement(FaBriefcase),
         date: "Oct 2023 - Apr 2024",
     },
-    // {
-    //     title: "Master's degree, Computer and Information Technology",
-    //     location: "University of Pennsylvania, USA",
-    //     description:
-    //         "Currently pursuing a Master's degree with a focus on Computer and Information Technology",
-    //     icon: React.createElement(FaGraduationCap),
-    //     date: "Jul 2023 - Aug 2025",
-    // },
     {
         title: "Marketing Behavioral Lab Research Assistant",
         location: "Lawrence, Kansas, United States",
@@ -66,22 +85,6 @@ export const experiencesData = [
         icon: React.createElement(FaMoneyCheckAlt),
         date: "Oct 2022 - Apr 2023",
     },
-
-    // {
-    //     title: "Study Abroad - Finance",
-    //     location: "The London School of Economics and Political Science (LSE), UK",
-    //     description: "Completed a Finance study abroad program specializing in Alternative Investments",
-    //     icon: React.createElement(FaGraduationCap),
-    //     date: "Jun 2022 - Jul 2022",
-    // },
-    // {
-    //     title: "Study Abroad - Marketing",
-    //     location: "CIMBA, Paderno del Grappa, Italy",
-    //     description:
-    //         "Studied International Marketing and The Global Consumer, focused on Global Business Education in Italy",
-    //     icon: React.createElement(FaGraduationCap),
-    //     date: "May 2022 - Jun 2022",
-    // },
     {
         title: "Applied Portfolio Management (APM): Student Analyst",
         location: "Lawrence, Kansas, United States",
@@ -90,17 +93,7 @@ export const experiencesData = [
         icon: React.createElement(FaChartPie),
         date: "Jan 2022 - May 2022",
     }
-    // {
-    //     title: "Double Bachelor's degree, Finance & Marketing",
-    //     location: "The University of Kansas School of Business, USA",
-    //     description:
-    //         "Graduated with a double major in Finance and Marketing, consistently achieving Honor Roll status with a GPA of 3.9 or higher throughout all semesters",
-    //     icon: React.createElement(FaGraduationCap),
-    //     date: "Aug 2020 - May 2023",
-    // }
-
 ] as const;
-
 
 export const skillsData = [
     "HTML",
@@ -123,3 +116,24 @@ export const skillsData = [
     "Sklearn",
     "PyTorch",
 ] as const;
+
+interface InfoItem {
+    fieldName: string;
+    fieldValue: string;
+}
+
+export const about = {
+    title: "About me",
+    description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    info: [
+        { fieldName: "Name", fieldValue: "Luke Coleman" },
+        { fieldName: "Phone", fieldValue: "(+40) 321 654 678" },
+        { fieldName: "Experience", fieldValue: "12+ Years" },
+        { fieldName: "Skype", fieldValue: "luke.01" },
+        { fieldName: "Nationality", fieldValue: "American" },
+        { fieldName: "Email", fieldValue: "luke.01@gmail.com" },
+        { fieldName: "Freelance", fieldValue: "Available" },
+        { fieldName: "Languages", fieldValue: "English, Spanish" },
+    ] as InfoItem[],
+} as const;

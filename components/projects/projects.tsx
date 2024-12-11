@@ -27,9 +27,7 @@ const Projects = () => {
             <SectionHeading>
                 My Projects
             </SectionHeading>
-            <h2 className={"text-center mb-4 text-l opacity-80"}>
-                Click on a project card to learn more about it (under development)
-            </h2>
+
             <div className="flex justify-center mb-6 sm:flex-nowrap flex-wrap gap-2.5 ">
                 {filters.map((filter, index) => (
                     <Button
