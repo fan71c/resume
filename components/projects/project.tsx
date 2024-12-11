@@ -22,7 +22,7 @@ export default function Project({title, description, tags, imageUrl, link, date,
             ref={ref}
             style={{
                 scale: scaleProgess,
-                opacity: opacityProgess,
+                // opacity: opacityProgess,
                 position: "relative",
             }}
             className="group mb-3 sm:mb-8 last:mb-0"
@@ -42,14 +42,13 @@ export default function Project({title, description, tags, imageUrl, link, date,
                     />
                 </div>
 
-                <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+                <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 dark:text-zinc-800">
                     {title}
                 </h1>
 
                 <p
-                    className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                    className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2 text-zinc-200 dark:text-zinc-800"
                     style={{
-                        color: "#BEC1DD",
                         margin: "1vh 0",
                     }}
                 >
@@ -61,7 +60,7 @@ export default function Project({title, description, tags, imageUrl, link, date,
                         {tags.map((tag, index) => (
                             <span
                                 key={index}
-                                className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm"
+                                className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm dark:bg-zinc-600 dark:text-zinc-200"
                             >
                                 {tag}
                             </span>
@@ -84,7 +83,7 @@ export default function Project({title, description, tags, imageUrl, link, date,
                     </div>
 
                     <div className="flex justify-center items-center ">
-                        <Link className="flex lg:text-xl md:text-xs text-sm text-purple " href={link}>
+                        <Link className="flex lg:text-xl md:text-xs text-sm text-purple dark:text-zinc-800" href={link}>
                             Learn More
                             <FaLocationArrow className="ml-3 mt-1.5" color="#CBACF9" href={link}/>
                         </Link>
