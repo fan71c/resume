@@ -69,7 +69,6 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     notFound();
   }
 
-  // const serializedContent: MDXRemoteSerializeResult = await serialize(post.content);
 
   return (
     <section className={"min-h-[1000rem] mx-auto max-w-screen-md "}>
