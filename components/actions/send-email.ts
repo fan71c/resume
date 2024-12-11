@@ -7,11 +7,10 @@ import {getErrorMessage, validateString} from "@/lib/utils";
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 
-
 export const sendEmail = async (formData: FormData) => {
 
     let response;
-    const senderEmail = formData.get('senderEmail') ;
+    const senderEmail = formData.get('senderEmail');
     const senderName = formData.get('senderName');
     const message = formData.get('message');
 
@@ -31,12 +30,12 @@ export const sendEmail = async (formData: FormData) => {
         }
     }
     try {
-         response = await resend.emails.send({
+        response = await resend.emails.send({
             from: "Personal Website Contact form <onboarding@resend.dev>",
             to: 'danylo.burenkov@gmail.com',
             subject: 'Message from your website',
             text: `Name: ${senderName}\nEmail: ${senderEmail}\nMessage: ${message}`,
-            reply_to: senderEmail as string
+            replyTo: senderEmail as string
         });
     } catch (error: unknown) {
         return {
