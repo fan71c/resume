@@ -1,9 +1,6 @@
 "use client";
 import React from "react";
-import {FaCss3, FaFigma, FaHtml5, FaJs, FaNodeJs, FaReact,} from "react-icons/fa";
-import {SiNextdotjs, SiTailwindcss} from "react-icons/si";
 import {Tabs, TabsContent, TabsList, TabsTrigger,} from "@/components/ui/tabs";
-import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,} from "@/components/ui/tooltip";
 import {ScrollArea} from "@/components/ui/scroll-area";
 import {motion} from "motion/react";
 import Experience from "@/components/resume/experience";
@@ -13,21 +10,7 @@ import Skills from "../skills/skills";
 import {ExpandableCardDemo} from "@/components/resume/aboutme";
 
 // Types for data
-interface InfoItem {
-    fieldName: string;
-    fieldValue: string;
-}
 
-interface EducationItem {
-    institution: string;
-    degree: string;
-    duration: string;
-}
-
-interface Skill {
-    icon: React.ReactElement;
-    name: string;
-}
 
 
 const experience = {
@@ -44,18 +27,7 @@ const education = {
 
 const skills = {
     title: "",
-    description:
-        "",
-    skillList: [
-        {icon: <FaHtml5/>, name: "html 5"},
-        {icon: <FaCss3/>, name: "css 3"},
-        {icon: <FaJs/>, name: "javascript"},
-        {icon: <FaReact/>, name: "react.js"},
-        {icon: <SiNextdotjs/>, name: "next.js"},
-        {icon: <SiTailwindcss/>, name: "tailwind.css"},
-        {icon: <FaNodeJs/>, name: "node.js"},
-        {icon: <FaFigma/>, name: "figma"},
-    ] as Skill[],
+    description: ""
 };
 
 // Component
@@ -150,35 +122,5 @@ const Section: React.FC<{ title: string; description: string; children: React.Re
     </div>
 );
 
-const Card: React.FC<{ title: string; subtitle: string; duration: string }> = ({title, subtitle, duration}) => (
-    <li className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-        <span className="text-accent">{duration}</span>
-        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{title}</h3>
-        <div className="flex items-center gap-3">
-            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-            <p className="text-white/60">{subtitle}</p>
-        </div>
-    </li>
-);
-
-const SkillCard: React.FC<{ icon: React.ReactElement; name: string }> = ({icon, name}) => (
-    <TooltipProvider delayDuration={100}>
-        <Tooltip>
-            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                <div className="text-6xl group-hover:text-accent transition-all duration-300">{icon}</div>
-            </TooltipTrigger>
-            <TooltipContent>
-                <p className="capitalize">{name}</p>
-            </TooltipContent>
-        </Tooltip>
-    </TooltipProvider>
-);
-
-const InfoItem: React.FC<{ label: string; value: string }> = ({label, value}) => (
-    <li className="flex items-center justify-center xl:justify-start gap-4">
-        <span className="text-white/60">{label}</span>
-        <span className="text-xl">{value}</span>
-    </li>
-);
 
 export default Resume;

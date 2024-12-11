@@ -8,7 +8,7 @@ export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
   );
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement>(null!);
   const id = useId();
 
   useEffect(() => {
@@ -28,9 +28,7 @@ export function ExpandableCardDemo() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
 
-    useOutsideClick(ref, () => {
-        setActive(false);
-    });
+  useOutsideClick(ref, () => setActive(null));
 
   return (
     <>
