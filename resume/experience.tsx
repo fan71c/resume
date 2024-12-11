@@ -24,7 +24,7 @@ const Experience: React.FC = () => {
     const currentTheme = theme === "system" ? resolvedTheme : theme;
 
     return (
-        <section id={"experience"} ref={ref} className={"scroll-mt-28 "}>
+        <section id={"experience"} ref={ref} className={"scroll-mt-28 max-w-[50rem]"}>
             <SectionHeading>
                 Work Experience
             </SectionHeading>
@@ -48,7 +48,6 @@ const Experience: React.FC = () => {
                                 borderRight: "0.4rem solid rgba(255, 255, 255, 0.5)",
                             }}
                             date={item.date}
-                            dateClassName={"text-gray-900 dark:text-gray-100 mx-4 font-bold"}
                             icon={item.icon}
                             iconStyle={{
                                 background: "rgba(255, 255, 255, 0.15)",

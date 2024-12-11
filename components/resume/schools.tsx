@@ -2,13 +2,13 @@
 import React, {useEffect, useState} from 'react';
 import 'react-vertical-timeline-component/style.min.css';
 import {VerticalTimeline, VerticalTimelineElement} from "react-vertical-timeline-component";
-import {experiencesData} from "@/lib/data";
+import {schoolData} from "@/lib/data";
 import {motion} from "motion/react";
 import {useTheme} from "next-themes";
 import {useSectionInView} from "@/lib/hooks";
 import SectionHeading from "@/components/ui/section-heading";
 
-const Experience: React.FC = () => {
+const Schools: React.FC = () => {
     const ref = useSectionInView("Experience");
     const {theme, resolvedTheme} = useTheme();
     const [mounted, setMounted] = useState(false);
@@ -26,16 +26,16 @@ const Experience: React.FC = () => {
     return (
         <section id={"experience"} ref={ref} className={"scroll-mt-28 "}>
             <SectionHeading>
-                Work Experience
+                Education Experience
             </SectionHeading>
             <VerticalTimeline lineColor={currentTheme === "light" ? "rgba(212,26,26,0.05)" : "rgba(255,255,255,0.15)"} animate={true}>
-                {experiencesData.map((item, index) => (
+                {schoolData.map((item, index) => (
                     <React.Fragment key={index}>
                         <VerticalTimelineElement
                             className="vertical-timeline-element--work"
                             visible={true}
                             contentStyle={{
-                                background: currentTheme === "light" ? "rgba(232,6,6,0.05)" : "rgba(255, 255, 255, 0.9)",
+                                background: currentTheme === "light" ? "rgba(32,6,6,0.05)" : "rgba(2, 255, 255, 0.9)",
                                 boxShadow: "none",
                                 border: "1px solid rgba(0, 0, 0, 0.05)",
                                 textAlign: "left",
@@ -69,7 +69,7 @@ const Experience: React.FC = () => {
     );
 };
 
-export default Experience;
+export default Schools;
 
 // src/types/react-vertical-timeline-component.d.ts
 declare module 'react-vertical-timeline-component';
