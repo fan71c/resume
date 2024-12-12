@@ -2,6 +2,7 @@ import React from "react";
 import CountUp from "react-countup";
 import useSWR from "swr";
 import axios from "axios";
+import BadgeCustom from "./badge";
 
 
 const fetcher = (url: string) => axios.get(url).then(res => res.data);
@@ -10,8 +11,9 @@ interface Stat {
     title: string;
     count: number;
 }
+
 type StravaData = {
-  milesRan: number;
+    milesRan: number;
 };
 
 export default function Stats() {
@@ -44,6 +46,9 @@ export default function Stats() {
                             <p className={`${stat.title.length < 15 ? "max-w-[100px]" : "max-w-[150px]"} leading-snug text-xl`}>
                                 {stat.title}
                             </p>
+                            {index === stats.length - 1 && (
+                                <BadgeCustom/>
+                            )}
                         </div>
                     ))}
                 </div>

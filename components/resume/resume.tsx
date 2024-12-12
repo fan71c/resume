@@ -39,7 +39,7 @@ const Resume: React.FC = () => {
                 opacity: 1,
                 transition: {delay: 2.4, duration: 0.4, ease: "easeIn"},
             }}
-            className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0 min-w-full"
+            className="min-h-[80vh] flex items-center justify-center py-4 xl:py-0 min-w-full"
         >
             <div className="container mx-auto">
                 <Tabs
@@ -55,7 +55,7 @@ const Resume: React.FC = () => {
                             <TabsTrigger value="experience">Experience</TabsTrigger>
                             <TabsTrigger value="education">Education</TabsTrigger>
                             <TabsTrigger value="skills">Skills</TabsTrigger>
-                            <TabsTrigger value="about">About me</TabsTrigger>
+                            {/*<TabsTrigger value="about">About me</TabsTrigger>*/}
                         </TabsList>
                     </div>
 
@@ -92,16 +92,11 @@ const Resume: React.FC = () => {
                         </TabsContent>
 
                         {/* About */}
-                        <TabsContent value="about">
-                            <Section title={about.title} description={about.description}>
-                                {/*<ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">*/}
-                                {/*    {about.info.map((item: InfoItem, index: number) => (*/}
-                                {/*        <InfoItem key={index} label={item.fieldName} value={item.fieldValue}/>*/}
-                                {/*    ))}*/}
-                                {/*</ul>*/}
-                                <ExpandableCardDemo/>
-                            </Section>
-                        </TabsContent>
+                        {/*<TabsContent value="about">*/}
+                        {/*    <Section title={about.title} description={about.description}>*/}
+                        {/*        <ExpandableCardDemo/>*/}
+                        {/*    </Section>*/}
+                        {/*</TabsContent>*/}
                     </div>
                 </Tabs>
             </div>
