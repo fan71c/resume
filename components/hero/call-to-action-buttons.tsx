@@ -1,5 +1,5 @@
 import React from "react";
-import {motion} from "motion/react"
+import {motion} from "framer-motion";
 import {ActiveSectionContext} from "@/components/context/active-section-context";
 import Link from "next/link";
 import {BsArrowRight, BsLinkedin} from "react-icons/bs";

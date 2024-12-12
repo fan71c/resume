@@ -4,27 +4,27 @@ import { FaBriefcase, FaChartLine, FaChartPie, FaGraduationCap, FaMoneyCheckAlt 
 export const links = [
     {
         name: "Home",
-        hash: "#home",
+        hash: "/#home",
     },
     {
         name: "Projects",
-        hash: "#finance",
+        hash: "/#finance",
     },
-    {
-        name: "Skills",
-        hash: "#skills",
-    },
+    // {
+    //     name: "Skills",
+    //     hash: "#skills",
+    // },
     {
         name: "Experience",
-        hash: "#experience",
+        hash: "/#experience",
     },
-    {
-        name: "Achievements",
-        hash: "#achievements",
-    },
+    // {
+    //     name: "Achievements",
+    //     hash: "#achievements",
+    // },
     {
         name: "Contact",
-        hash: "#contact",
+        hash: "/#contact",
     },
 ] as const;
 

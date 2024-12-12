@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
-import { motion } from "motion/react"
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils"
 
 const Separator = React.forwardRef<

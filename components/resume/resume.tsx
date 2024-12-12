@@ -2,12 +2,13 @@
 import React from "react";
 import {Tabs, TabsContent, TabsList, TabsTrigger,} from "@/components/ui/tabs";
 import {ScrollArea} from "@/components/ui/scroll-area";
-import {motion} from "motion/react";
+import {motion} from "framer-motion";
 import Experience from "@/components/resume/experience";
 import {about} from "@/lib/data";
 import Schools from "@/components/resume/schools";
 import Skills from "../skills/skills";
 import {ExpandableCardDemo} from "@/components/resume/aboutme";
+import {useSectionInView} from "@/lib/hooks";
 
 // Types for data
 
@@ -32,6 +33,7 @@ const skills = {
 
 // Component
 const Resume: React.FC = () => {
+    const ref = useSectionInView("Experience")
     return (
         <motion.div
             initial={{opacity: 0}}
@@ -40,6 +42,8 @@ const Resume: React.FC = () => {
                 transition: {delay: 2.4, duration: 0.4, ease: "easeIn"},
             }}
             className="min-h-[80vh] flex items-center justify-center py-4 xl:py-0 min-w-full"
+            ref={ref}
+            id="Experience"
         >
             <div className="container mx-auto">
                 <Tabs

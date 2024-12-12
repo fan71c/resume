@@ -9,6 +9,7 @@ import {BackgroundBeamsWithCollision} from "@/components/context/background-beam
 
 import {Roboto} from 'next/font/google'
 import Header from "@/components/header/header";
+import ActiveSectionContextProvider from "@/components/context/active-section-context";
 
 const roboto = Roboto({
     weight: '400',
@@ -40,10 +41,12 @@ export default function RootLayout({
         >
             <Header/>
             <BackgroundBeamsWithCollision>
-                {children}
-                <div className={"fixed bottom-6 right-6 "}>
-                    <ModeToggle/>
-                </div>
+                <ActiveSectionContextProvider>
+                    {children}
+                    <div className={"fixed bottom-6 right-6 "}>
+                        <ModeToggle/>
+                    </div>
+                </ActiveSectionContextProvider>
             </BackgroundBeamsWithCollision>
         </ThemeProvider>
         <Analytics/>
