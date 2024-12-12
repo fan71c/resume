@@ -7,15 +7,13 @@ import {ModeToggle} from "@/components/ui/mode-toggle";
 import {BackgroundBeamsWithCollision} from "@/components/context/background-beams-with-collision";
 
 
-
-import { Roboto } from 'next/font/google'
+import {Roboto} from 'next/font/google'
 import Header from "@/components/header/header";
 
 const roboto = Roboto({
-  weight: '400',
-  subsets: ['latin'],
+    weight: '400',
+    subsets: ['latin'],
 })
-
 
 
 export const metadata: Metadata = {
