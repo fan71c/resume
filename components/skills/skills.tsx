@@ -3,14 +3,14 @@ import React from 'react';
 import SectionHeading from "@/components/ui/section-heading";
 import {skillsData} from "@/lib/data";
 import {useSectionInView} from "@/lib/hooks";
-import {motion} from 'motion/react';
+import {motion} from "framer-motion";
 
 
 const Skills = () => {
 
-    const ref = useSectionInView("Skills");
+    // const ref = useSectionInView("Skills");
     return (
-        <section ref={ref} className={"mb-28 max-w-[53rem] scroll-mt-28 text-center "} id={"skills"}>
+        <section className={"mb-28 max-w-[53rem] scroll-mt-28 text-center "} id={"skills"}>
             <SectionHeading>
                 My Skills
             </SectionHeading>

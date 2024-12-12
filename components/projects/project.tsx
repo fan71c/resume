@@ -1,6 +1,6 @@
 import {projectsData} from "@/lib/projects";
 import React, {useRef} from "react";
-import {motion, useScroll, useTransform} from "motion/react";
+import {motion, useScroll, useTransform} from "framer-motion";
 import {FaLocationArrow} from "react-icons/fa6";
 import {PinContainer} from "@/components/ui/3d-pin";
 import Image from "next/image";

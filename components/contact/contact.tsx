@@ -3,7 +3,7 @@
 import React, {useState} from "react";
 import {useSectionInView} from "@/lib/hooks";
 import SectionHeading from "@/components/ui/section-heading";
-import {motion} from "motion/react";
+import {motion} from "framer-motion";
 import {sendEmail} from "@/components/actions/send-email";
 import SubmitBtn from "@/components/contact/submit-btn";
 import {Alert, AlertDescription, AlertTitle} from "@/components/ui/alert";
