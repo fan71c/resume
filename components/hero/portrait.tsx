@@ -5,7 +5,12 @@ import Image from "next/image";
 
 
 export default function Portrait() {
-    return <div className={"flex items-center justify-center "}>
+    return <motion.div className={"flex items-center justify-center relative w-full h-full"}
+                       initial={{opacity: 0}}
+                       animate={{
+                           opacity: 1,
+                           transition: {delay: 1, duration: 0.4, ease: "easeIn"},
+                       }}>
         <motion.svg className={"w-[300px] xl:w-[506px] h-[300px] xl:-[506px] "}
                     fill={"transparent"}
                     viewBox={"0 0 506 506"}
@@ -31,14 +36,12 @@ export default function Portrait() {
             >
             </motion.circle>
         </motion.svg>
-        <div className={"absolute"}>
-            <motion.div initial={{opacity: 0, scale: 0}} animate={{opacity: 1, scale: 1}}
-                        transition={{type: "tween", duration: 1}}>
-                <Image src={"/danylo.jpg"} alt={"Danylo Burenkov Portrait"} width="192" height="192"
-                       quality={95}
-                       priority={true}
-                       className={"h-[13.9rem] w-[13.9rem] rounded-full  object-cover shadow-xl"}/>
-            </motion.div>
-        </div>
-    </div>
+        <motion.div initial={{opacity: 0, scale: 0}} animate={{opacity: 1, scale: 1}}
+                    transition={{type: "tween", duration: 1}} className={"absolute"}>
+            <Image src={"/danylo.jpg"} alt={"Danylo Burenkov Portrait"} width="192" height="192"
+                   quality={95}
+                   priority={true}
+                   className={"h-[13.9rem] w-[13.9rem] rounded-full  object-contain shadow-xl"}/>
+        </motion.div>
+    </motion.div>
 }

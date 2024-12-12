@@ -14,6 +14,7 @@ export default function Hero() {
     return (
         <section className={"mb-28 max-w-[60rem] text-center sm:mb-0 scroll-mt-28 "} ref={ref}>
             <Portrait/>
+            {/*<Photo/>*/}
             <motion.h1
                 className={"text-center text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 to-neutral-400 dark:bg-gradient-to-b dark:from-neutral-200 dark:to-neutral-500 py-8"}
                 initial={{opacity: 0, y: -100}}
