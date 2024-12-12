@@ -71,7 +71,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
 
 
   return (
-    <section className={"min-h-[1000rem] mx-auto max-w-screen-md "}>
+    <section className={"min-h-fit mx-auto max-w-screen-md "}>
       <script
         type="application/ld+json"
         suppressHydrationWarning
