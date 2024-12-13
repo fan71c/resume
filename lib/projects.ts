@@ -14,7 +14,7 @@ export const projectsData = [
             "Predicted NBA player performance using machine learning models and player statistics",
         tags: ["Python", "Machine Learning", "Pandas", "Numpy", "Scikit-learn"],
         imageUrl: nba,
-        link: "https://brofi.app/",
+        link: "/blog/nba",
         iconLists: ["numpy-seeklogo-2.svg", "pandas-seeklogo.svg", "scikit-learn.svg", "sql-database-generic.svg"],
         date: "2024",
         area: "Data Science",
