@@ -3,6 +3,7 @@ import Image from 'next/image'
 import {MDXRemote, MDXRemoteSerializeResult} from 'next-mdx-remote/rsc'
 import {highlight} from 'sugar-high'
 import React from 'react'
+import Footer from "@/components/footer";
 interface TableData {
     headers: string[];
     rows: string[][];
@@ -144,9 +145,8 @@ interface CustomMDXProps {
 
 export function CustomMDX(props: CustomMDXProps) {
     return (
-        <MDXRemote
+        <><MDXRemote
             {...props}
-            components={{...components, ...(props.components || {})}}
-        />
+            components={{...components, ...(props.components || {})}}/><Footer/></>
     )
 }

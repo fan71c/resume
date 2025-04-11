@@ -17,6 +17,8 @@ export const projectsData = [
         link: "/blog/nba",
         iconLists: ["numpy-seeklogo-2.svg", "pandas-seeklogo.svg", "scikit-learn.svg", "sql-database-generic.svg"],
         date: "2024",
+        github: "",
+        source: "",
         area: "Data Science",
     },
     {
@@ -29,6 +31,8 @@ export const projectsData = [
         link: "/blog/capitol",
         iconLists: ["excel.svg", "word.svg", "power-point.svg"],
         date: "2022",
+        github: "",
+        source: "",
         area: "Finance",
     },
     {
@@ -41,6 +45,8 @@ export const projectsData = [
         link: "/blog/meta",
         iconLists: ["excel.svg", "word.svg", "power-point.svg"],
         date: "2022",
+        github: "",
+        source: "",
         area: "Finance",
     },
     {
@@ -53,6 +59,8 @@ export const projectsData = [
         link: "/blog/lgi",
         iconLists: ["excel.svg", "word.svg", "power-point.svg", "rstudio.svg"],
         date: "2022",
+        github: "",
+        source: "",
         area: "Finance",
     },
     {
@@ -65,6 +73,8 @@ export const projectsData = [
         link: "/blog/terracon",
         iconLists: ["excel.svg", "word.svg", "power-point.svg"],
         date: "2023",
+        github: "",
+        source: "",
         area: "Finance",
     },
     {
@@ -77,6 +87,8 @@ export const projectsData = [
         imageUrl: greatblueheron,
         link: "/blog/gbho",
         date: "2022",
+        github: "",
+        source: "",
         area: "Marketing",
     },
     {
@@ -89,6 +101,8 @@ export const projectsData = [
         imageUrl: airbnblogo,
         link: "/blog/airbnb",
         date: "2022",
+        github: "",
+        source: "",
         area: "Marketing",
     },
 ] as const;

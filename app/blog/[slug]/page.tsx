@@ -102,6 +102,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
+      # TODO: Pass the Github and source links to the blog post for each project/post
       <article className="prose ">
         <CustomMDX source={post.content} />
       </article>
