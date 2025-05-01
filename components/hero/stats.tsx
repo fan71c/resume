@@ -26,8 +26,8 @@ export default function Stats() {
 
     const stats: Stat[] = [
         {title: "Projects", count: 7},
-        {title: "Technologies mastered", count: 4},
-        {title: "Years of work experience", count: 2},
+        {title: "Technologies/Tools mastered", count: 11},
+        {title: "Years of work experience", count: 3},
         {title: "Miles ran", count: milesRanFinal},
     ];
 

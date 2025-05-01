@@ -35,7 +35,7 @@ export const schoolData = [
         description:
             "Currently pursuing a Master's degree with a focus on Computer and Information Technology",
         icon: React.createElement(FaGraduationCap),
-        date: "Jul 2023 - Aug 2025",
+        date: "Jul 2023 - May 2025",
     },
     {
         title: "Study Abroad - Finance",
@@ -63,6 +63,13 @@ export const schoolData = [
 ] as const;
 
 export const experiencesData = [
+    {
+        title: "Business Analyst - Exante",
+        location: "Bulgaria · Remote",
+        description: "Analyzed sales data to identify trends and opportunities for improvement. Developed dashboards and reports to provide actionable insights for sales teams. Collaborated with stakeholders to understand challenges and facilitate solutionsk",
+        icon: React.createElement(FaBriefcase),
+        date: "Jan 2025 - Current",
+    },
     {
         title: "Junior Accountant - Capital Market Service",
         location: "Sofia City, Bulgaria · Remote",
@@ -97,6 +104,7 @@ export const experiencesData = [
 
 export const skillsData = [
     "HTML",
+    "Power BI",
     "CSS",
     "JavaScript",
     "TypeScript",
@@ -122,18 +130,3 @@ interface InfoItem {
     fieldValue: string;
 }
 
-export const about = {
-    title: "About me",
-    description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
-    info: [
-        { fieldName: "Name", fieldValue: "Luke Coleman" },
-        { fieldName: "Phone", fieldValue: "(+40) 321 654 678" },
-        { fieldName: "Experience", fieldValue: "12+ Years" },
-        { fieldName: "Skype", fieldValue: "luke.01" },
-        { fieldName: "Nationality", fieldValue: "American" },
-        { fieldName: "Email", fieldValue: "luke.01@gmail.com" },
-        { fieldName: "Freelance", fieldValue: "Available" },
-        { fieldName: "Languages", fieldValue: "English, Spanish" },
-    ] as InfoItem[],
-} as const;

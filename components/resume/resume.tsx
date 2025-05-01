@@ -4,7 +4,6 @@ import {Tabs, TabsContent, TabsList, TabsTrigger,} from "@/components/ui/tabs";
 import {ScrollArea} from "@/components/ui/scroll-area";
 import {motion} from "framer-motion";
 import Experience from "@/components/resume/experience";
-import {about} from "@/lib/data";
 import Schools from "@/components/resume/schools";
 import Skills from "../skills/skills";
 import {ExpandableCardDemo} from "@/components/resume/aboutme";

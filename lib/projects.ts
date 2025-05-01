@@ -17,7 +17,7 @@ export const projectsData = [
         link: "/blog/nba",
         iconLists: ["numpy-seeklogo-2.svg", "pandas-seeklogo.svg", "scikit-learn.svg", "sql-database-generic.svg"],
         date: "2024",
-        github: "",
+        github: "https://github.com/fan71c/NBA-Project",
         source: "",
         area: "Data Science",
     },

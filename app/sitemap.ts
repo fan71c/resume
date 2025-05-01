@@ -1,7 +1,6 @@
 import { getBlogPosts } from "@/app/blog/utils";
 
-//TODO: change the url for your website
-export const baseUrl = 'https://portfolio-blog-starter.vercel.app';
+export const baseUrl = 'https://danburenkov.vercel.app/';
 
 interface Post {
   slug: string;

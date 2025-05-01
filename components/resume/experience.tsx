@@ -48,7 +48,7 @@ const Experience: React.FC = () => {
                                 borderRight: "0.4rem solid rgba(255, 255, 255, 0.5)",
                             }}
                             date={item.date}
-                            dateClassName={"text-gray-900 dark:text-gray-100 mx-4 font-bold"}
+                            dateClassName={"text-gray-900 dark:text-gray-400 mx-4 font-bold"}
                             icon={item.icon}
                             iconStyle={{
                                 background: "rgba(255, 255, 255, 0.15)",

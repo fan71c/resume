@@ -41,7 +41,7 @@ const Projects = () => {
                     </Button>
                 ))}
             </div>
-            <div className="flex flex-col md:flex-row md:flex-wrap justify-center sm:gap-x-[5rem] gap-y-[6rem] sm:gap-y-[8rem] my-[8rem]">
+            <div className="flex flex-col md:flex-row md:flex-wrap justify-center sm:gap-x-[5rem] gap-y-[6rem] sm:gap-y-[10rem] my-[8rem]">
                 {
                     filteredProjects.map((project) => (
                         <React.Fragment key={project.id}>
